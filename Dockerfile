@@ -13,6 +13,7 @@ COPY backend/package*.json ./
 RUN npm install
 COPY backend/ ./
 COPY --from=frontend-build /app/dist /app/dist
+COPY backend/.env /app/.env
 
 EXPOSE 3000
 CMD ["npm", "start"] 
